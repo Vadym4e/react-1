@@ -1,12 +1,15 @@
-import { RecepeList } from './RecepeList/RecepeList';
-import recepes from './recepes.json';
+import { RecipeList } from './RecipeList/RecipeList';
+import recipes from '../recipes.json';
 import { GlobalStyle } from './GlobalStyle';
+import { Layout } from './Layout/Layout';
 
 export const App = () => {
   return (
-    <>
-      <RecepeList items={recepes} />
+    <Layout>
+      <div>Recipe Form</div>
+      <RecipeList items={recipes} />
+      <div>Image modal</div>
       <GlobalStyle />
-    </>
+    </Layout>
   );
 };

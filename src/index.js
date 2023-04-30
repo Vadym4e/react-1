@@ -5,8 +5,15 @@ import { App } from 'components/App';
 
 const theme = {
   colors: {
-    text: '#212121',
-    accent: 'blue',
+    black: '#212121',
+    white: '#fff',
+    accent: 'orangered',
+  },
+  radii: {
+    xs: '2px',
+    sm: '4px',
+    md: '8px',
+    lg: '16px',
   },
 };
 
