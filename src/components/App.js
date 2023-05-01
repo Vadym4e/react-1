@@ -1,15 +1,21 @@
 import { RecipeList } from './RecipeList/RecipeList';
-import recipes from '../recipes.json';
+import initialRecipes from '../recipes.json';
 import { GlobalStyle } from './GlobalStyle';
 import { Layout } from './Layout/Layout';
+import { Component } from 'react';
 
-export const App = () => {
-  return (
-    <Layout>
-      <div>Recipe Form</div>
-      <RecipeList items={recipes} />
-      <div>Image modal</div>
-      <GlobalStyle />
-    </Layout>
-  );
-};
+export class App extends Component {
+  state = {
+    recipes: initialRecipes,
+  };
+  render() {
+    return (
+      <Layout>
+        <div>Recipe Form</div>
+        <RecipeList items={this.state.recipes} />
+        <div>Image modal</div>
+        <GlobalStyle />
+      </Layout>
+    );
+  }
+}

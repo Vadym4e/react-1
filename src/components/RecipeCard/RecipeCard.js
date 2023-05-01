@@ -4,12 +4,17 @@ import {
   AiOutlinePieChart,
   AiOutlineBarChart,
 } from 'react-icons/ai';
+import { HiTrash, HiZoomIn } from 'react-icons/hi';
 import {
   InfoBlock,
   Name,
   RecipeInfo,
   BadgeList,
   Badge,
+  Actions,
+  Container,
+  Meta,
+  Image,
 } from './RecipeCard.styled';
 import { RecipeDifficulty } from 'constants';
 
@@ -17,26 +22,27 @@ export const RecipeCard = ({
   item: { image, name, time, servings, calories, difficulty },
 }) => {
   return (
-    <div>
-      <img src={image} alt={name} width="240" />
-      <Name>{name}</Name>
+    <Container>
+      <Image src={image} alt={name} width="240" />
 
-      <RecipeInfo>
-        <InfoBlock>
-          <AiOutlineClockCircle size="24" />
-          <span>{time} min</span>
-        </InfoBlock>
-        <InfoBlock>
-          <AiOutlinePieChart size="24" />
-          <span>{servings} servings</span>
-        </InfoBlock>
-        <InfoBlock>
-          <AiOutlineBarChart size="24" />
-          <span>{calories} calories</span>
-        </InfoBlock>
-      </RecipeInfo>
+      <Meta>
+        <Name>{name}</Name>
 
-      <div>
+        <RecipeInfo>
+          <InfoBlock>
+            <AiOutlineClockCircle size="24" />
+            <span>{time} min</span>
+          </InfoBlock>
+          <InfoBlock>
+            <AiOutlinePieChart size="24" />
+            <span>{servings} servings</span>
+          </InfoBlock>
+          <InfoBlock>
+            <AiOutlineBarChart size="24" />
+            <span>{calories} calories</span>
+          </InfoBlock>
+        </RecipeInfo>
+
         <h3>Difficulty</h3>
         <BadgeList>
           <Badge
@@ -58,8 +64,17 @@ export const RecipeCard = ({
             Hard
           </Badge>
         </BadgeList>
-      </div>
-    </div>
+
+        <Actions>
+          <button aria-label="Delete">
+            <HiTrash />
+          </button>
+          <button aria-label="Zoom">
+            <HiZoomIn />
+          </button>
+        </Actions>
+      </Meta>
+    </Container>
   );
 };
 
